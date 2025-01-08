@@ -1,0 +1,17 @@
+{
+  "name": "caribbean-scholar-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "implicitDependencies": ["caribbean-scholar"],
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "options": {
+        "jestConfig": "apps/caribbean-scholar-e2e/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["caribbean-scholar:build"]
+    }
+  }
+}
